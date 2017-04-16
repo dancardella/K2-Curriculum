@@ -1,0 +1,67 @@
+setwd("~/Desktop/FOUNDATIONS/CURRICULUM/Regression")
+
+fundamentals <- read.csv("fundamentals.csv", header = TRUE)
+fundamentals_masked <- read.csv("fundamentals_masked.csv", header = TRUE)
+fundamentals_masked_net_index<- fundamentals_masked[c('market_cap', 'editda','day_prior_dr','comp_cor','ror')]
+
+# quasi interpolation to rid NA 
+fundamentals_masked_net_index$ror[8] =1
+
+fit <- lm(ror~., data=fundamentals_masked_net_index)
+
+summary(fit)
+
+# R-squared agrees with Python
+
+"Call:
+lm(formula = ror ~ ., data = fundamentals_masked_net_index)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-24.157 -12.411   1.062   9.840  18.034 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)   
+(Intercept)   434.472    130.599   3.327  0.00603 **
+market_cap      1.008      1.136   0.887  0.39233   
+editda        -16.251     10.885  -1.493  0.16126   
+day_prior_dr -375.821    133.263  -2.820  0.01546 * 
+comp_cor      -94.551     50.446  -1.874  0.08543 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 15.02 on 12 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.5353,	Adjusted R-squared:  0.3804 
+F-statistic: 3.455 on 4 and 12 DF,  p-value: 0.04243"
+
+step(fit, direction="both")
+
+# Model optimized by dropping market_cap 
+
+"Start:  AIC=96.19
+ror ~ market_cap + editda + day_prior_dr + comp_cor
+
+               Df Sum of Sq    RSS     AIC
+- market_cap    1    177.58 2884.0  95.273
+<none>                      2706.4  96.193
+- editda        1    502.71 3209.1  97.089
+- comp_cor      1    792.30 3498.7  98.558
+- day_prior_dr  1   1793.71 4500.1 102.837
+
+Step:  AIC=95.27
+ror ~ editda + day_prior_dr + comp_cor
+
+               Df Sum of Sq    RSS     AIC
+<none>                      2884.0  95.273
+- editda        1    384.42 3268.4  95.400
++ market_cap    1    177.58 2706.4  96.193
+- comp_cor      1    906.13 3790.1  97.918
+- day_prior_dr  1   1665.90 4549.9 101.024
+
+Call:
+lm(formula = ror ~ editda + day_prior_dr + comp_cor, data = fundamentals_masked_net_index)
+
+Coefficients:
+ (Intercept)        editda  day_prior_dr      comp_cor  
+     390.774        -8.521      -321.149      -100.283"
