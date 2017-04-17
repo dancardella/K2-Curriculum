@@ -13,12 +13,12 @@ I relied upon normalized stock volume to investigate investment windows and ulti
 After cleaning the data, I examined the Scatter Matrix and learned that the variable relationships aren't generally very strong.
 
 ### Scatter_Matrix.png
-![](/images/Scatter_Matrix.pn?raw=true)
+![](/images/Scatter_Matrix.png)
 
 I also investigated correlations among variables which corroborated the above conclusion that factors are weakly correlated to one another.
 
 ### Feature_Correlation_Graph
-![](/images/Feature_Correlation.png?raw=true)
+![](/images/Feature_Correlation.png)
 
 After normalizing price spreads based upon stock trading volume (used Excel), I examined the mean spread ratio for all stocks relative to normalized stock volume.
 
