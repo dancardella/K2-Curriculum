@@ -30,6 +30,7 @@ I then established a filter (maskings) function that could be used to further re
 
 I ran a multiple linear regression model with `statsmodels`. The R-squared value was not high (.535) and the p-values inform me that I should probably drop some extraneous variables as I revise my model.
 
+![](OLS_Output.png)
 
 
 Finally, I loaded the dataset into R in order to determine that the r-squared's matched (they did) and to identify the optimizated linear regression formula (using the 'step' function with direction = 'both' forward and backward).
