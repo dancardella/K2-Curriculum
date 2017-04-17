@@ -14,16 +14,19 @@ After cleaning the data, I examined the Scatter Matrix and learned that the vari
 
 ### Scatter_Matrix.png
 ![](/images/Scatter_Matrix.png)
+Format: ![Alt Text](url)
 
 I also investigated correlations among variables which corroborated the above conclusion that factors are weakly correlated to one another.
 
 ### Feature_Correlation_Graph
 ![](/images/Feature_Correlation.png)
+Format: ![Alt Text](url)
 
 After normalizing price spreads based upon stock trading volume (used Excel), I examined the mean spread ratio for all stocks relative to normalized stock volume.
 
 ### Mean_Spread_Ratio
 ![](/images/Mean_Spread_Ratio.png)
+Format: ![Alt Text](url)
 
 I then established a filter (maskings) function that could be used to further refine the data set based upon particular parameters for each of 'market_cap', 'editda','day_prior_dr' and 'comp_cor'.
 
