@@ -28,7 +28,7 @@ After normalizing price spreads based upon stock trading volume (used Excel), I 
 I then established a filter (maskings) function that could be used to further refine the data set based upon particular parameters for each of 'market_cap', 'editda','day_prior_dr' and 'comp_cor'.
 
 
-I ran a multiple linear regression model with `statsmodels`. The R-squared value was not high (.535) and the p-values inform me that I should probably drop some extraneous variables as I revise my model.
+I ran a multiple linear regression model with `statsmodels`. The R-squared value was not high (.457) and the p-values inform me that I should probably drop some extraneous variables as I revise my model.
 
 ![](OLS_Output_2.png)
 
