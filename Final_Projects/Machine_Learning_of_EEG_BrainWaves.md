@@ -44,4 +44,5 @@ Personally, I found the conclusion that 1-3 Hz Delta waves explained the vast pr
 ![Explained Variance](explained_variance.png)
 
 
-Seee here the Kaggle EEG Brainwaves Dataset: https://www.kaggle.com/wanghaohan/eeg-brain-wave-for-confusion
+
+Kaggle EEG Brainwaves Dataset: https://www.kaggle.com/wanghaohan/eeg-brain-wave-for-confusion
